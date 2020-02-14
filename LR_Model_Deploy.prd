@@ -1,0 +1,153 @@
+version "1";
+charset 1208;
+object 'SCFG' "scriptConfig" {
+	LogNumDelete="10",
+	LogEnableNumDelete="true"
+};
+
+object 'CNTL' "Start" {
+	Start_Node="Parameter-1",
+	Control_Type="Start"
+};
+
+object 'CNTL' "End-1" {
+	Success="True",
+	Abort="False",
+	Exit_Status=0,
+	Control_Type="End"
+};
+
+object 'PROC' "Execute-1" {
+	Success_Node="End-1",
+	ProcessList={
+		{
+			Process="python3 /data/di/projects/Appointments_Prediction/programs/LR_extension/LR_Production_Extension2.py $(file input) $(model output) $(Target Variable) $(OHE output) $(File Output)",
+			FailureType="Fail",
+			Argument="",
+			RowIndex="0"
+		}
+	},
+	Process_Type="Execute"
+};
+
+object 'PROC' "Parameter-1" {
+	Success_Node="Execute-1",
+	Parameters={
+		{
+			Name="file input",
+			Value="$(file input)",
+			IsIntegParameter="False"
+		},
+		{
+			Name="File Output",
+			Value="$(File Output)",
+			IsIntegParameter="False"
+		},
+		{
+			Name="model output",
+			Value="$(model output)",
+			IsIntegParameter="False"
+		},
+		{
+			Name="OHE output",
+			Value="$(OHE output)",
+			IsIntegParameter="False"
+		},
+		{
+			Name="Target Variable",
+			Value="$(Target Variable)",
+			IsIntegParameter="False"
+		}
+	},
+	Set_Environment="False",
+	Process_Type="Parameter"
+};
+
+object 'PARM' "Parameters" {
+	Values={
+		{
+			Key="file input",
+			Value="bike_day_raw.csv"
+		},
+		{
+			Key="File Output",
+			Value="output_file.txt"
+		},
+		{
+			Key="model output",
+			Value="LR_model.sav"
+		},
+		{
+			Key="OHE output",
+			Value="ohe.sav"
+		},
+		{
+			Key="Target Variable",
+			Value="cnt"
+		}
+	}
+};
+
+object 'INFO' "GUI" {
+	Data={
+		Nodes={
+			{
+				Node="Start",
+				xLoc=8,
+				yLoc=8,
+				Width=65,
+				Height=65
+			},
+			{
+				Node="Execute-1",
+				xLoc=208,
+				yLoc=8,
+				Width=65,
+				Height=65
+			},
+			{
+				Node="Parameter-1",
+				xLoc=108,
+				yLoc=8,
+				Width=65,
+				Height=65
+			},
+			{
+				Node="End-1",
+				xLoc=333,
+				yLoc=8,
+				Width=65,
+				Height=65
+			}
+		}
+	}
+};
+
+object 'RCNF' "Main" {
+	DefaultDisable="False",
+	IsDefaultRunConf="True",
+	Disabled_Nodes={
+	},
+	Parameters={
+		{
+			Key="file input",
+			Value="bike_day_raw.csv"
+		},
+		{
+			Key="File Output",
+			Value="output_file.txt"
+		},
+		{
+			Key="model output",
+			Value="LR_model.sav"
+		},
+		{
+			Key="OHE output",
+			Value="ohe.sav"
+		},
+		{
+			Key="Target Variable",
+			Value="cnt"
+		}
+	}
+};
