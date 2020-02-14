@@ -58,3 +58,5 @@ sys
 - **hum**: Normalized humidity. The values are divided to 100 (max)
 - **windspeed**: Normalized wind speed. The values are divided to 67 (max)
 - **cnt**: count of total rental bikes including both casual and registered
+
+**Production_Extension_Guidance.pdf**: Guidance on how to create and install a DI-Production extension 
