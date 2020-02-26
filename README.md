@@ -4,15 +4,15 @@
 
 ## Terminology 
  
-**DI-Production** DI-Production is part of the Diver Solution and provides various options for process flow management. Wherever we say ‘DI-Production’, note that this also applies to the DIProduction that’s incorporated in Workbench.\
+**DI-Production** DI-Production provides various options for process flow management as part of the Diver Solution. Wherever we say ‘DI-Production’, note that this also applies to the DIProduction that’s incorporated in Workbench.\
 **DI-DiveLine** The server component of the Diver Solution. It enables flexible, scalable authentication of users and centralized access to your DI Models, administers named users and groups, and shares processing with the various DI clients, such as ProDiver and DivePort.\
 **Extensions** Custom user-made nodes in DI-Production.\
 **Python**  An open-source programming language.\
 **Linear Regression(LR)** In statistics, linear regression is a linear approach to modeling the relationship between a scalar response and one or more explanatory variables.
 
-## Requirements & Installation 
+## Requirements 
  
-(Workbench or) **DI-Production** (Introduced in The Diver Solution version 6.4). We advise to use **7.0 or newer**.
+**DI-Production** or DI Workbench (Tool to access DI-Production): We advise to use **7.0 or newer**.
  
 Working command-line version of the **Python 3** software installed on laptop, workstation or server with the following libraries:\
 numpy\
@@ -22,7 +22,7 @@ pickle\
 sys
 
 ## Introduction to Files
-**LR_Build_Deploy.prd**: Main Production script that combining build and deploy linear regression model\
+**LR_Build_Deploy.prd**: Main Production script that combines building and deploying linear regression model\
 **LR_Model_Build.prd**: Run LR_Production_Extension_Build.py to build linear regression model
 ##### Parameters
  - **file input** Path and name of the input file for testing (Example: /data/di/projects/Appointments_Prediction/programs/LR_extension/bike_day_raw.csv)
@@ -60,3 +60,15 @@ sys
 - **cnt**: Count of total rental bikes including both casual and registered
 
 **Production_Extension_Guidance.pdf**: Guidance on how to create and install a DI-Production extension 
+
+
+## Installation Steps
+- 1: Use the two production scripts to set up production extensions (See Production_Extension_Guidance.pdf for details)
+Extension **LR Model Build**: Production script "LR_Model_Build.prd"
+Extension **LR Model Deploy**: Production script "LR_Model_Deploy.prd"
+
+*Modify the path of python software and python code files in the production scripts if necessary.
+
+- 2: Open the production script "LR_Build_Deploy.prd" and config all the parameters
+
+- 3: Run the production script "LR_Build_Deploy.prd" to build linear regression model and to create output file with predicted target value
