@@ -63,12 +63,12 @@ sys
 
 
 ## Installation Steps
-- 1: Use the two production scripts to set up production extensions (See Production_Extension_Guidance.pdf for details)
+ 1: Use the two production scripts to set up production extensions (See Production_Extension_Guidance.pdf for details)
 Extension **LR Model Build**: Production script "LR_Model_Build.prd"
 Extension **LR Model Deploy**: Production script "LR_Model_Deploy.prd"
 
 *Modify the path of python software and python code files in the production scripts if necessary.
 
-- 2: Open the production script "LR_Build_Deploy.prd" and config all the parameters
+ 2: Open the production script "LR_Build_Deploy.prd" and config all the parameters
 
-- 3: Run the production script "LR_Build_Deploy.prd" to build linear regression model and to create output file with predicted target value
+ 3: Run the production script "LR_Build_Deploy.prd" to build linear regression model and to create output file with predicted target value
