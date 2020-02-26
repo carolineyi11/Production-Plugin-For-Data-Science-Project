@@ -4,15 +4,15 @@
 
 ## Terminology 
  
-**DI-Production** DI-Production provides various options for process flow management as part of the Diver Solution. Wherever we say ‘DI-Production’, note that this also applies to the DIProduction that’s incorporated in Workbench.\
-**DI-DiveLine** The server component of the Diver Solution. It enables flexible, scalable authentication of users and centralized access to your DI Models, administers named users and groups, and shares processing with the various DI clients, such as ProDiver and DivePort.\
+**DI-Production** DI-Production provides various options for process flow management as part of the Diver Solution. “DI-Production” also applies to the DIProduction incorporated in Workbench.\
+**DI-DiveLine** The server component of the Diver Solution which enables flexible, scalable authentication of users and centralized access to your DI Models. It also administers named users and groups and shares processing with various DI Clients, such as ProDiver and DivePort.\
 **Extensions** Custom user-made nodes in DI-Production.\
 **Python**  An open-source programming language.\
 **Linear Regression(LR)** In statistics, linear regression is a linear approach to modeling the relationship between a scalar response and one or more explanatory variables.
 
 ## Requirements 
  
-**DI-Production** or DI Workbench (Tool to access DI-Production): We advise to use **7.0 or newer**.
+**DI-Production** or DI Workbench (Tool to access DI-Production): We advise using **7.0 or newer**.
  
 Working command-line version of the **Python 3** software installed on laptop, workstation or server with the following libraries:\
 numpy\
