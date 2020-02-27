@@ -22,7 +22,10 @@ pickle\
 sys
 
 ## Introduction to Files
-**LR_Build_Deploy.prd**: Main Production script that combines building and deploying linear regression model\
+**LR_Build_Deploy.prd**: Main Production script that combines building and deploying linear regression model
+
+**lr_model_build.pre**: Extension file using LR_Model_Build.prd
+
 **LR_Model_Build.prd**: Run LR_Production_Extension_Build.py to build linear regression model
 ##### Parameters
  - **file input** Path and name of the input file for testing (Example: /data/di/projects/Appointments_Prediction/programs/LR_extension/bike_day_raw.csv)
@@ -31,6 +34,8 @@ sys
  - **Target Variable** Name of the target variable (Example: cnt)
 
 **LR_Production_Extension_Build.py**: Python script to build linear regression model
+
+**lr_model_deploy.pre**: Extension file using LR_Model_Deploy.prd
 
 **LR_Model_Deploy.prd**: Run LR_Production_Extension_Deploy.py to deploy linear regression model
 ##### Parameters
@@ -63,7 +68,7 @@ sys
 
 
 ## Installation Steps
- 1: Use the two production scripts to set up production extensions (See Production_Extension_Guidance.pdf for details)
+ 1: Use the two extension files to set up production extensions (See Production_Extension_Guidance.pdf for details)
 Extension **LR Model Build**: Production script "LR_Model_Build.prd"\
 Extension **LR Model Deploy**: Production script "LR_Model_Deploy.prd"
 
