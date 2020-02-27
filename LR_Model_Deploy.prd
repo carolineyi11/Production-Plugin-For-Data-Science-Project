@@ -1,4 +1,4 @@
-version "1";
+﻿version "1";
 charset 1208;
 object 'SCFG' "scriptConfig" {
 	LogNumDelete="10",
@@ -21,7 +21,7 @@ object 'PROC' "Execute-1" {
 	Success_Node="End-1",
 	ProcessList={
 		{
-			Process="python3 /data/di/projects/Appointments_Prediction/programs/LR_extension/LR_Production_Extension_Deploy.py $(file input) $(model output) $(Target Variable) $(OHE output) $(File Output)",
+			Process="python3 /data/di/projects/Appointments_Prediction/programs/LR_extension/LR_Production_Extension_Deploy.py $(File Input) $(Model Input) $(Target Variable) $(OHE Input) $(Output File)",
 			FailureType="Fail",
 			Argument=""
 		}
@@ -33,23 +33,23 @@ object 'PROC' "Parameter-1" {
 	Success_Node="Execute-1",
 	Parameters={
 		{
-			Name="file input",
-			Value="$(file input)",
+			Name="File Input",
+			Value="$(File Input)",
 			IsIntegParameter="False"
 		},
 		{
-			Name="File Output",
-			Value="$(File Output)",
+			Name="Output File",
+			Value="$(Output File)",
 			IsIntegParameter="False"
 		},
 		{
-			Name="model output",
-			Value="$(model output)",
+			Name="Model Input",
+			Value="$(Model Input)",
 			IsIntegParameter="False"
 		},
 		{
-			Name="OHE output",
-			Value="$(OHE output)",
+			Name="OHE Input",
+			Value="$(OHE Input)",
 			IsIntegParameter="False"
 		},
 		{
@@ -65,19 +65,19 @@ object 'PROC' "Parameter-1" {
 object 'PARM' "Parameters" {
 	Values={
 		{
-			Key="file input",
+			Key="File Input",
 			Value="bike_day_raw.csv"
 		},
 		{
-			Key="File Output",
+			Key="Output File",
 			Value="output_file.txt"
 		},
 		{
-			Key="model output",
+			Key="Model Output",
 			Value="LR_model.sav"
 		},
 		{
-			Key="OHE output",
+			Key="OHE Output",
 			Value="ohe.sav"
 		},
 		{
@@ -129,19 +129,19 @@ object 'RCNF' "Main" {
 	},
 	Parameters={
 		{
-			Key="file input",
+			Key="File Input",
 			Value="bike_day_raw.csv"
 		},
 		{
-			Key="File Output",
+			Key="Output File",
 			Value="output_file.txt"
 		},
 		{
-			Key="model output",
+			Key="Model Output",
 			Value="LR_model.sav"
 		},
 		{
-			Key="OHE output",
+			Key="OHE Output",
 			Value="ohe.sav"
 		},
 		{
